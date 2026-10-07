@@ -1,0 +1,19 @@
+name = "presensi-api"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "presensi-db"
+database_id = "GANTI_DENGAN_ID_D1_ANDA"   # dari: wrangler d1 create presensi-db
+
+[vars]
+# Jarak Euclidean maksimum agar dianggap cocok (face-api.js 128-D).
+# Riset memakai <= 0.60; presensi memakai 0.50 (lebih ketat). Kalibrasi dgn data nyata.
+MATCH_THRESHOLD = "0.5"
+# Origin frontend yang boleh memanggil API (pisahkan dengan koma).
+ALLOWED_ORIGINS = "https://presensi.piawai.id,http://localhost:8080,http://127.0.0.1:8080"
+
+# Secret WAJIB (lewat CLI, JANGAN ditulis di file ini):
+#   wrangler secret put SESSION_SECRET
+#   wrangler secret put TEMPLATE_KEY      # node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
