@@ -5,7 +5,7 @@ compatibility_date = "2026-09-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "presensi-db"
-database_id = "GANTI_DENGAN_ID_D1_ANDA"   # dari: wrangler d1 create presensi-db
+database_id = "febd5e76-d7ad-420a-acba-54d920ee7f2a"   # dari: wrangler d1 create presensi-db
 
 [vars]
 # Jarak Euclidean maksimum agar dianggap cocok (face-api.js 128-D).
